@@ -1,5 +1,6 @@
 import express from 'express'
 import { config } from 'dotenv'
+import { getUsersController } from './controllers/get-user'
 
 config({ path: './.env', encoding: 'latin1', debug: true })
 
@@ -13,6 +14,6 @@ app.listen(port, () =>
   console.log(`escutando na porta http://localhost:${port}`)
 )
 
-app.get('/', (req, res) => {
-  res.send('Hello World !')
+app.get('/users', (req, res) => {
+  getUsersController.handle(req, res)
 })
