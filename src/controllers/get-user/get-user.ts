@@ -10,9 +10,9 @@ export class GetUsersController implements IController {
       const user = await this.getUserRepository.getUsers()
 
       return res.status(200).json(user)
-    } catch (err) {
+    } catch (error) {
       return res.status(400).json({
-        message: err.message || 'Unexpected error.'
+        message: error.message || 'Unexpected error.'
       })
     }
   }
