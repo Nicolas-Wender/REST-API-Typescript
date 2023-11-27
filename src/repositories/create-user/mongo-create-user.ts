@@ -5,11 +5,11 @@ import { CreateUserParams, ICreateUserRepository } from './protocols'
 export class MongoCreateUsersRepository implements ICreateUserRepository {
   async createUser(params: CreateUserParams): Promise<User> {
     const { insertedId } = await MongoClient.db
-      .collection('user')
+      .collection('usuarios')
       .insertOne(params)
 
     const user = await MongoClient.db
-      .collection<Omit<User, 'id'>>('user')
+      .collection<Omit<User, 'id'>>('usuarios')
       .findOne({ _id: insertedId })
 
     if (!user) {
