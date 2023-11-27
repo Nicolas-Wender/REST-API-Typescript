@@ -1,4 +1,4 @@
-import { IGetUsersRepository } from './protocols'
+import { IGetUsersRepository } from '../../repositories/get-users/protocols'
 import { IController } from '../protocols'
 import { Request, Response } from 'express'
 

@@ -1,4 +1,4 @@
-import { IGetUsersRepository } from '../../controllers/get-user/protocols'
+import { IGetUsersRepository } from './protocols'
 import { MongoClient } from '../../database/mongo';
 import { User } from '../../models/user'
 
