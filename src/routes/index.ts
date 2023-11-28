@@ -2,6 +2,7 @@ import { Router } from 'express'
 import { getUsersController } from '../controllers/get-user'
 import { createUsersController } from '../controllers/create-user'
 import { updateUsersController } from '../controllers/update-users'
+import { deleteUsersController } from '../controllers/delete-user'
 
 const router = Router()
 
@@ -14,6 +15,9 @@ router
   })
   .put('/users/:id', (req, res) => {
     updateUsersController.handle(req, res)
+  })
+  .delete('/users/:id', (req, res) => {
+    deleteUsersController.handle(req, res)
   })
 
 export { router }
